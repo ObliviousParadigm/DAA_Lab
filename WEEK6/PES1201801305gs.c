@@ -35,29 +35,29 @@ bool isTree(int n, const int graph[][n])
 	return true;
 }
 
-// int dfs(int v, int n, const int safeSeq[][n], int *visit)
-// {
-// 	visit[v] = 1;
-// 	int hCnt = 1;
-// 	for (int i = 0; i < n; i++)
-// 	{
-// 		if (safeSeq[v][i] && (!visit[i]))
-// 			hCnt += dfs(i, n, safeSeq, visit);
-// 	}
-// 	return hCnt;
-// }
+int dfs(int v, int n, const int safeSeq[][n], int *visit)
+{
+	visit[v] = 1;
+	int hCnt = 1;
+	for (int i = 0; i < n; i++)
+	{
+		if (safeSeq[v][i] && (!visit[i]))
+			hCnt += dfs(i, n, safeSeq, visit);
+	}
+	return hCnt;
+}
 
-// int dfswithK(int v, int k, int n, const int safeSeq[][n], int *visit)
-// {
-// 	visit[v] = 1;
-// 	int hCnt = 1;
-// 	for (int i = 0; i < n; i++)
-// 	{
-// 		if (safeSeq[v][i] && (!visit[i]) && abs(v - i) <= k)
-// 			hCnt += dfs(i, n, safeSeq, visit);
-// 	}
-// 	return hCnt;
-// }
+int dfswithK(int v, int k, int n, const int safeSeq[][n], int *visit)
+{
+	visit[v] = 1;
+	int hCnt = 1;
+	for (int i = 0; i < n; i++)
+	{
+		if (safeSeq[v][i] && (!visit[i]) && abs(v - i) <= k)
+			hCnt += dfs(i, n, safeSeq, visit);
+	}
+	return hCnt;
+}
 
 int bfs(int n, const int safeSeq[][n], int *visit)
 {
