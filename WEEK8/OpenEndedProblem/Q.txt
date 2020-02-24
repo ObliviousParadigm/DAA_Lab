@@ -1,0 +1,2 @@
+Design a scheduler that would schedule a set of tasks, a number of tasks need to wait for some other tasks to complete prior to running themselves. 
+What algorithm could be used to design the scheduler and how would you implement it?
